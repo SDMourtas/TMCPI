@@ -1,10 +1,10 @@
-function [t,x1]=TMCPI(gamma,p,m,dp,dm,fl,theta)
+function [t,x1]=TMCPI(gamma,p,m,c,dp,dm,dc,fl,theta)
 tspan=[0:0.01:5]; options=odeset(); n=length(m(0)); x0=[theta;2*ones(4*n+2,1)];
 warning off
 
 % ZNN solutions
 tic
-[t,x1]=ode15s(@ZNN,tspan,x0,options,gamma,p,m,dp,dm,fl,theta);
+[t,x1]=ode15s(@ZNN,tspan,x0,options,gamma,p,m,c,dp,dm,dc,fl,theta);
 toc
 for i=1:n
 subplot(n,1,i);plot(t,x1(:,i),'Color',[0.4940 0.1840 0.5560]);hold on
@@ -13,7 +13,7 @@ end
 
 % LVI-PDNN solutions
 tic
-[t,x2]=ode15s(@LVIPDNN,t,x0(1:n+1),options,gamma,p,m,fl,theta);
+[t,x2]=ode15s(@LVIPDNN,t,x0(1:n+1),options,gamma,p,m,c,fl,theta);
 toc
 for i=1:n
 subplot(n,1,i);plot(t,x2(:,i),'-.','Color',[0.4660 0.6740 0.1880]);hold on
@@ -22,7 +22,7 @@ end
 % S-LVI-PDNN solutions
 if n<10
 tic
-[t,x3]=ode15s(@SLVIPDNN,t,x0(1:n+1),options,gamma,p,m,fl,theta);
+[t,x3]=ode15s(@SLVIPDNN,t,x0(1:n+1),options,gamma,p,m,c,fl,theta);
 toc
 for i=1:n
 subplot(n,1,i);plot(t,x3(:,i),'--','Color',[0.3010 0.7450 0.9330]);hold on
@@ -34,7 +34,7 @@ options1=optimset('Display','off');
 tot=length(t);xth=zeros(n,tot);fth=zeros(tot,1);
 tic
 for i=1:tot
-[xi_minus,xi_plus,~,J,A,q,d,b]=problem(t(i),p,m,fl,theta);
+[xi_minus,xi_plus,~,J,A,q,d,b]=problem(t(i),p,m,c,fl,theta);
 try
 [xth(:,i),fth(i)]=linprog(q,A,b,J,d,xi_minus,xi_plus,theta,options1);
 catch

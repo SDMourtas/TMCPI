@@ -29,8 +29,8 @@ n=3; fl=158;    % Example 1
 %n=20; fl=1600;  % Example 4
 
 X=X1(:,1:n);              % market space
-[p,m,dp,dm]=dataprep(X,s);
 theta=2*ones(n,1); % given portfolio
+[p,m,c,dp,dm,dc]=dataprep(X,s,theta);
 
 gamma=1e3; % NN design parameter
-[t1,x1]=TMCPI(gamma,p,m,dp,dm,fl,theta);
+[t1,x1]=TMCPI(gamma,p,m,c,dp,dm,dc,fl,theta);

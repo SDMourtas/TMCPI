@@ -1,6 +1,6 @@
-function output=ZNN(t,x,gamma,p,m,dp,dm,fl,theta)
-[~,~,A,q,~,b,z]=problem2(t,p,m,fl,theta); n=length(m(t));
-[~,~,dA,dq,~,db]=problem2(t,dp,dm,fl,theta,z);
+function output=ZNN(t,x,gamma,p,m,c,dp,dm,dc,fl,theta)
+[~,~,A,q,~,b,z]=problem2(t,p,m,c,fl,theta); n=length(m(t));
+[~,~,dA,dq,~,db]=problem2(t,dp,dm,dc,fl,theta,z);
 lenb=length(b); KK=n+lenb; GG=KK+lenb;
 X=x(1:n); K=x(n+1:KK); G=x(KK+1:GG);
 

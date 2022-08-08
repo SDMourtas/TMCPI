@@ -1,11 +1,11 @@
-function [xi_minus,xi_plus,W,J,A,q,d,b,omegabar]=problem(t,pr,X,c,theta)
+function [xi_minus,xi_plus,W,J,A,q,d,b,omegabar]=problem(t,pr,X,c,fl,theta)
 om=oomega(t);
 q=pr(om*t); %insurance prices
 A=-X(om*t)'; %marketed space
+xi_plus=c(om*t);
 n=length(q);
 payoff=A*theta;
-b=min(payoff,-c);
-xi_plus=payoff./A';
+b=min(payoff,-fl);
 xi_minus=zeros(n,1);
 omegabar=1e100;
 W=zeros(n);
