@@ -2,7 +2,7 @@
 Minimum-cost portfolio insurance (MCPI) is a well-known investment strategy that tries to limit the losses a portfolio may incur as stocks decrease in price without requiring the portfolio manager to sell those stocks. This repository contains the time-varying MCPI (TMCPI) problem, which is defined as a time-varying linear programming (TVLP) problem. 
 The purpose of this package is to solve online the continuous-time version of the TMCPI problem by using different error-correction neural networks (ENNs). These neural network (NN) solvers are the zeroing NN (ZNN), the linear-variational-inequality primal–dual NN (LVI-PDNN), and the simplified LVI-PDNN (S-LVI-PDNN). 
 The main article used is the following:
-*	V.N. Katsikis, S.D. Mourtas, T.E. Simos and D. Balios, "Portfolio Insurance through Error-Correction Neural Networks", (submitted)
+*	V.N. Kovalnogov, R.V. Fedorov, D.A. Generalov, A.V. Chukalin, V.N. Katsikis, S.D. Mourtas, T.E. Simos, "Portfolio Insurance through Error-Correction Neural Networks", Mathematics, 10(18), 3335 (2022)
 
 # M-files Description
 *	Main_TMCPI.m: the main function and parameters declaration
