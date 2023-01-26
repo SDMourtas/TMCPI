@@ -5,12 +5,12 @@
 %                                                                   %
 %  Author and programmer: S.D.Mourtas, V.N.Katsikis                 %
 %                                                                   %
-%   e-Mail: vaskatsikis@econ.uoa.gr, spirosmourtas@gmail.com,       %
-%           tsimos.conf@gmail.com dbalios@econ.uoa.gr               %
+%   e-Mail: spirosmourtas@gmail.com, vaskatsikis@econ.uoa.gr,       %
 %                                                                   %
-%   Main paper: V.N.Katsikis, S.D.Mourtas, T.E.Simos, D.Balios,     %
+%   Main paper: V.N.Kovalnogov, R.V.Fedorov, D.A.Generalov,         %
+%               A.V.Chukalin, V.N.Katsikis, S.D.Mourtas, T.E.Simos, %
 %               "Portfolio Insurance through Error-Correction Neural%
-%               Networks", (submitted)                              %
+%               Networks", Mathematics, 10(18), 3335 (2022)         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clear 
